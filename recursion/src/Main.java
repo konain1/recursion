@@ -9,8 +9,32 @@ public class Main {
         int n = 5;
         int m = 1;
 //        Reversecounting(n);
-        counting(m);
+//        counting(m);
 
+//        int resutlt =fact(n);
+//        System.out.println(resutlt);
+
+        int ans = fibo(n);
+    }
+public static int fibo(int n){
+        if(n == 0|| n ==1){
+            return n;
+        }
+
+        int res = fibo(n-1) + fibo(n-2);
+        return res;
+
+
+}
+    public static int fact(int n){
+        if(n <=1){
+            return 1;
+        }
+//        int aagekaFact = fact(n-1);
+//        int ans = n * aagekaFact;
+//        return ans;
+
+        return n * fact(n-1);
     }
     public static void counting(int m){
         if(m == 6){
