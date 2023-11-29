@@ -8,6 +8,7 @@ public class Main {
         int m = 1;
         String [] arr ={ "zero","one","two","three","four","five","six","seven","eight","nine"};
         int pow = 6;
+        int [] sortedArr = {1,2,2,3,4,5};
 
 //        Reversecounting(n);
 //        counting(m);
@@ -24,10 +25,25 @@ public class Main {
 
 //        int result = exponent(pow);
 //        System.out.println(result);
-        int optResult = OptimizeExponent(pow);
-        System.out.println(optResult);
+//        int optResult = OptimizeExponent(pow);
+//        System.out.println(optResult);
+
+        boolean res = sortedRec(sortedArr,1);
+        System.out.println(res);
     }
 
+    public static boolean sortedRec(int [] arr,int index){
+        if(index >= arr.length){
+            return true;
+        }
+
+
+        if(arr[index] < arr[index-1]){
+            return false;
+        }
+
+       return sortedRec(arr,index+1);
+    }
     public static int OptimizeExponent(int n){
         if(n == 0) return 1;
 
