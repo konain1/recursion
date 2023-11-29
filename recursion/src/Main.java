@@ -7,7 +7,7 @@ public class Main {
         int n = 432;
         int m = 1;
         String [] arr ={ "zero","one","two","three","four","five","six","seven","eight","nine"};
-        int pow = 5;
+        int pow = 6;
 
 //        Reversecounting(n);
 //        counting(m);
@@ -22,10 +22,23 @@ public class Main {
 
 //        printSpell(n, arr);
 
-        int result = exponent(pow);
-        System.out.println(result);
+//        int result = exponent(pow);
+//        System.out.println(result);
+        int optResult = OptimizeExponent(pow);
+        System.out.println(optResult);
     }
 
+    public static int OptimizeExponent(int n){
+        if(n == 0) return 1;
+
+        int half = OptimizeExponent(n/2);
+
+        if(n % 2 != 0){
+            return 2 *half * half;
+        }else{
+            return half * half;
+        }
+    }
     public static int exponent(int pow){
 
         if(pow == 0){
