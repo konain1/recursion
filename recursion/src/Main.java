@@ -7,6 +7,7 @@ public class Main {
         int n = 432;
         int m = 1;
         String [] arr ={ "zero","one","two","three","four","five","six","seven","eight","nine"};
+        int pow = 5;
 
 //        Reversecounting(n);
 //        counting(m);
@@ -19,7 +20,20 @@ public class Main {
 
 //        System.out.println(ans);
 
-        printSpell(n, arr);
+//        printSpell(n, arr);
+
+        int result = exponent(pow);
+        System.out.println(result);
+    }
+
+    public static int exponent(int pow){
+
+        if(pow == 0){
+            return 1;
+        }
+
+         int n = 2 * exponent(pow-1);
+        return n;
     }
     public static void printSpell(int n, String[] str){
         if(n == 0){
