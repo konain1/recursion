@@ -8,7 +8,10 @@ public class Main {
         int m = 1;
         String [] arr ={ "zero","one","two","three","four","five","six","seven","eight","nine"};
         int pow = 6;
-        int [] sortedArr = {1,2,2,3,4,5};
+        int [] sortedArr = {1,2,2, 3,4,5};
+
+        String str = "abc";
+        String ans = "";
 
 //        Reversecounting(n);
 //        counting(m);
@@ -28,10 +31,26 @@ public class Main {
 //        int optResult = OptimizeExponent(pow);
 //        System.out.println(optResult);
 
-        boolean res = sortedRec(sortedArr,1);
-        System.out.println(res);
+//        boolean res = sortedRec(sortedArr,1);
+//        System.out.println(res);
+
+        subsequence(str,ans);
     }
 
+    public static void subsequence(String str,String ans){
+
+        if(str.length() == 0){
+            System.out.println(ans);
+            return;
+        }
+
+//        take
+        subsequence(str.substring(1),ans+str.charAt(0));
+
+//        not take
+        subsequence(str.substring(1),ans);
+
+    }
     public static boolean sortedRec(int [] arr,int index){
         if(index >= arr.length){
             return true;
