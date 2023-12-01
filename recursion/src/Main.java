@@ -4,7 +4,7 @@ public class Main {
 //        Scanner scan = new Scanner(System.in);
 //
 //        int n = scan.nextInt();
-        int n = 2;
+        int n = 4;
         int m = 1;
         String [] arr ={ "zero","one","two","three","four","five","six","seven","eight","nine"};
         int pow = 6;
@@ -40,12 +40,18 @@ public class Main {
     }
 
     public static int stairscase(int n){
-        if(n <= 0 ){
+        if(n<0){
+            return 0;
+        }
+        if(n <= 1 ){
             return 1;
+        }
+        if(n == 2){
+            return 2;
         }
 
 
-        return stairscase(n-1) + stairscase(n-2) + stairscase(n-3);
+        return stairscase(n-2) + stairscase(n-1) + stairscase(n-3) +stairscase(n-4);
     }
     public static void subsequence(String str,String ans){
 
